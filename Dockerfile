@@ -1,8 +1,8 @@
 FROM java:8
 
-MAINTAINER Sjoerd Mulder <sjoerd@sagent.io>
+MAINTAINER Valery <vamukhs@gmail.com>
 
-ENV TEAMCITY_VERSION 9.1.6
+ENV TEAMCITY_VERSION 9.1.7
 ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 # Install docker
