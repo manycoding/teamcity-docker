@@ -33,5 +33,5 @@ At the installation screen of teamcity as host for postgress you can specify `po
 How to upgrade to a new version?
 ----------------
 1. `docker pull manycoding/teamcity:latest`
-2. stop the old image
+2. `docker stop teamcity && docker rename teamcity teamcity_old`
 3. `docker run --name teamcity --privileged --link postgres_teamcity:postgres -v /home/toaster/Data/teamcity:/var/lib/teamcity -v /var/run/docker.sock:/var/run/docker.sock -p 8111:8111 manycoding/teamcity:latest`
