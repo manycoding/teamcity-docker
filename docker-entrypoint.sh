@@ -23,7 +23,8 @@ echo -e "agent.authorize.tokens=gantry_crane:'VVyS!w@0cUXf*R!!UVvjPt9#abY7m#*M8v
 
 echo -e "serverUrl=127.0.0.1:8111\nname=gantry_crane\nteamcity.magic.authorizationToken='VVyS!w@0cUXf*R!!UVvjPt9#abY7m#*M8vk$SLUGtPsHgH3aVi'" > /opt/TeamCity/buildAgent/conf/buildAgent.properties
 
-docker rm $FIREFOX_CONTAINER
+docker stop $FIREFOX_CONTAINER || true
+docker rm $FIREFOX_CONTAINER || true
 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc
 docker run -d --name=$FIREFOX_CONTAINER --link teamcity:teamcity --privileged -e TEAMCITY_SERVER=127.0.0.1:8111 -e AGENT_NAME=$FIREFOX_AGENT manycoding/teamcity-agent-robotframework:latest
 docker stop $FIREFOX_CONTAINER
