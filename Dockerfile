@@ -7,7 +7,7 @@ ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 # Install docker
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    docker.io && \
+    docker.io \
     python-requests && \
     apt-get clean autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
