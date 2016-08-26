@@ -1,6 +1,6 @@
 JetBrains TeamCity docker image
 ===============
-[![](https://badge.imagelayers.io/manycoding/teamcity:latest.svg)](https://imagelayers.io/?images=manycoding/teamcity:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/manycoding/teamcity.svg)](https://microbadger.com/images/manycoding/teamcity "Get your own image badge on microbadger.com")
 
 Distributed Build Management and Continuous Integration Server
 
