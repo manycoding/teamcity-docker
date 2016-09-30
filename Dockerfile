@@ -2,7 +2,7 @@ FROM java:8
 
 MAINTAINER Valery <vamukhs@gmail.com>
 
-ENV TEAMCITY_VERSION 10.0.1
+ENV TEAMCITY_VERSION 10.0.2
 ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 # Install docker
