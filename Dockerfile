@@ -1,9 +1,9 @@
 FROM java:8
-
 MAINTAINER Valery Mukhtarulin <vamukhs@gmail.com>
 
 ENV TEAMCITY_VERSION 10.0.2
 ENV TEAMCITY_DATA_PATH /var/lib/teamcity
+ENV TEAMCITY_SERVER http://localhost:8111
 
 # Install docker
 RUN apt-get update && apt-get install -y --no-install-recommends \

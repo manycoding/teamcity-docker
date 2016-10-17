@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-TEAMCITY_SERVER=http://$(hostname --fqdn):8111
 
 mkdir -p $TEAMCITY_DATA_PATH/lib/jdbc $TEAMCITY_DATA_PATH/config
 if [ ! -f "$TEAMCITY_DATA_PATH/lib/jdbc/postgresql-9.4.1209.jar" ];
@@ -26,7 +25,6 @@ echo -e "serverUrl=127.0.0.1:8111\nname=gantry_crane\nteamcity.magic.authorizati
 
 docker stop $FIREFOX_CONTAINER || true
 docker rm $FIREFOX_CONTAINER || true
-docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc
 docker run -d --name=$FIREFOX_CONTAINER --link teamcity:teamcity --privileged -e TEAMCITY_SERVER=$TEAMCITY_SERVER -e AGENT_NAME=$FIREFOX_AGENT manycoding/teamcity-agent-robotframework:latest
 docker stop $FIREFOX_CONTAINER
 

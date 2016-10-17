@@ -26,7 +26,7 @@ docker run -it --link postgres_teamcity:postgres --rm -e "SETUP_TEAMCITY_SQL=$SE
 ```
 Then you can start the teamcity image, linked to the postgres image
 ```
-docker run --name teamcity --privileged --link postgres_teamcity:postgres -v /home/toaster/Data/teamcity:/var/lib/teamcity -v /var/run/docker.sock:/var/run/docker.sock -p 8111:8111 manycoding/teamcity:latest
+docker run --name teamcity --privileged --link postgres_teamcity:postgres -v /home/toaster/Data/teamcity:/var/lib/teamcity -v /var/run/docker.sock:/var/run/docker.sock -e TEAMCITY_SERVER=localhost:8111-p 8111:8111 manycoding/teamcity:latest
 ```
 At the installation screen of teamcity as host for postgress you can specify `postgres`
 
@@ -34,4 +34,4 @@ How to upgrade to a new version?
 ----------------
 1. `docker pull manycoding/teamcity:latest`
 2. `docker stop teamcity && docker rename teamcity teamcity_old`
-3. `docker run --name teamcity --privileged --link postgres_teamcity:postgres -v /home/toaster/Data/teamcity:/var/lib/teamcity -v /var/run/docker.sock:/var/run/docker.sock -p 8111:8111 manycoding/teamcity:latest`
+3. `docker run --name teamcity --privileged --link postgres_teamcity:postgres -v /home/toaster/Data/teamcity:/var/lib/teamcity -v /var/run/docker.sock:/var/run/docker.sock -e TEAMCITY_SERVER=localhost:8111 -p 8111:8111 manycoding/teamcity:latest`
