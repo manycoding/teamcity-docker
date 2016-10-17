@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER Valery Mukhtarulin <vamukhs@gmail.com>
+MAINTAINER Valery M. <vamukhs@gmail.com>
 
 ENV TEAMCITY_VERSION 10.0.2
 ENV TEAMCITY_DATA_PATH /var/lib/teamcity
